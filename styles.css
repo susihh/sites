@@ -1,0 +1,683 @@
+/* ================================
+   Paleta e tipografia de alto padrão
+   ================================ */
+   :root {
+    /* Cores principais */
+    --black: #0b0b0c;
+    --black-2: #121316;
+    --gold: #c9a228;
+    --gold-2: #e1c35a;
+    --blue: #2b5cff;
+    --blue-2: #122a7a;
+  
+    /* Cores de apoio e estados */
+    --text: #e7e9ee;
+    --text-dim: #c7cad3;
+    --muted: #8b8f9a;
+  
+    --surface: #0f1013;
+    --surface-2: #161820;
+    --surface-3: #1c1f29;
+  
+    --border: #282c37;
+    --focus: #7aa2ff;
+  
+    /* Sombras e efeitos */
+    --shadow-1: 0 6px 16px rgba(0, 0, 0, 0.35);
+    --shadow-2: 0 10px 30px rgba(0, 0, 0, 0.45);
+    --ring: 0 0 0 3px rgba(42, 95, 255, 0.35);
+  
+    /* Espaçamento e raios */
+    --space-1: 6px;
+    --space-2: 10px;
+    --space-3: 16px;
+    --space-4: 24px;
+    --space-5: 36px;
+    --space-6: 56px;
+  
+    --radius-1: 8px;
+    --radius-2: 14px;
+    --radius-3: 22px;
+  
+    /* Tipografia */
+    --font-ui: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    --font-display: "Playfair Display", Georgia, serif;
+  
+    /* Larguras */
+    --container: 1200px;
+  }
+  
+  /* Reset moderno e suavização */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    margin: 0;
+    color: var(--text);
+    background: radial-gradient(1000px 500px at 10% 0%, #0d0e12 0%, var(--black) 60%) fixed;
+    font-family: var(--font-ui);
+    line-height: 1.6;
+  }
+  
+  /* Links de pular para conteúdo */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+  }
+  .skip-link:focus {
+    left: var(--space-3);
+    top: var(--space-3);
+    background: var(--blue);
+    color: #fff;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-1);
+    box-shadow: var(--shadow-1);
+    z-index: 9999;
+  }
+  
+  /* ================================
+     Cabeçalho
+     ================================ */
+  .site-header {
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: saturate(1.2) blur(8px);
+    background: linear-gradient(180deg, rgba(12, 13, 16, 0.8), rgba(12, 13, 16, 0.5));
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--space-3);
+  }
+  .header-wrap {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+  }
+  .brand .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text);
+    text-decoration: none;
+  }
+  .logo-mark {
+    color: var(--gold);
+    font-size: 1.25rem;
+    transform: translateY(-1px);
+  }
+  .logo-text {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.4px;
+  }
+  
+  /* Navegação */
+  .nav .nav-list {
+    list-style: none;
+    display: flex;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+  }
+  .nav-link {
+    color: var(--text);
+    text-decoration: none;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-1);
+    transition: 180ms ease;
+  }
+  .nav-link:hover {
+    background: var(--surface-2);
+    color: var(--gold-2);
+  }
+  
+  /* Busca */
+  .search {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-2);
+  }
+  .search input[type="search"] {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-1);
+    outline: none;
+  }
+  .search input[type="search"]::placeholder {
+    color: var(--muted);
+  }
+  .search input[type="search"]:focus {
+    border-color: var(--blue);
+    box-shadow: var(--ring);
+  }
+  
+  /* ================================
+     Hero
+     ================================ */
+  .hero {
+    padding: var(--space-6) 0 var(--space-5) 0;
+    background:
+      radial-gradient(800px 300px at 80% 10%, rgba(43, 92, 255, 0.15), transparent 60%),
+      linear-gradient(180deg, rgba(18, 20, 28, 0.6), rgba(18, 20, 28, 0.2));
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-wrap {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: var(--space-5);
+    align-items: center;
+  }
+  .title-xl {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    line-height: 1.15;
+    letter-spacing: 0.3px;
+  }
+  .subtitle {
+    color: var(--text-dim);
+    max-width: 48ch;
+    margin-top: var(--space-2);
+  }
+  .hero-actions {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+  }
+  .hero-card {
+    background: linear-gradient(180deg, var(--surface-2), var(--surface-3));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-2);
+  }
+  .stat {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .stat:last-child {
+    border-bottom: none;
+  }
+  .stat-number {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1.8rem;
+    font-family: var(--font-display);
+  }
+  .stat-label {
+    color: var(--text-dim);
+  }
+  
+  /* ================================
+     Seções e títulos
+     ================================ */
+  .section {
+    padding: var(--space-5) 0;
+  }
+  .section-header {
+    margin-bottom: var(--space-4);
+  }
+  .title-l {
+    font-family: var(--font-display);
+    font-size: 2rem;
+  }
+  .title-m {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+  }
+  
+  /* ================================
+     Filtros (chips)
+     ================================ */
+  .filters-form {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    padding: var(--space-3);
+  }
+  .filters-group {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  .filters-legend {
+    color: var(--text-dim);
+    margin-bottom: var(--space-2);
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin: var(--space-1);
+    padding: var(--space-1) var(--space-2);
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--text);
+    transition: 160ms ease;
+    user-select: none;
+  }
+  .chip:hover {
+    border-color: var(--gold);
+    color: var(--gold-2);
+  }
+  .chip input {
+    accent-color: var(--blue);
+  }
+  
+  /* ================================
+     Grade de itens
+     ================================ */
+  .items .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+  .card {
+    background: linear-gradient(180deg, var(--surface-2), var(--surface-3));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow-1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-media {
+    padding: var(--space-3);
+    background: linear-gradient(120deg, rgba(201,162,40,0.06), rgba(43,92,255,0.06));
+    border-bottom: 1px solid var(--border);
+  }
+  .media {
+    height: 160px;
+    border-radius: var(--radius-1);
+    border: 1px dashed var(--border);
+    background:
+      radial-gradient(140px 60px at 20% 20%, rgba(201,162,40,0.17), transparent 40%),
+      radial-gradient(120px 60px at 80% 60%, rgba(43,92,255,0.20), transparent 45%),
+      linear-gradient(180deg, rgba(22,24,30,1), rgba(16,18,24,1));
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: 0.4px;
+  }
+  .card-body {
+    padding: var(--space-3);
+  }
+  .card-title {
+    margin: 0 0 var(--space-1) 0;
+  }
+  .card-meta {
+    margin: 0 0 var(--space-2) 0;
+    color: var(--text-dim);
+    font-size: 0.98rem;
+  }
+  .card-desc {
+    margin: 0 0 var(--space-3) 0;
+    color: var(--text);
+    opacity: 0.9;
+  }
+  
+  /* Placeholders de mídia com ícones simples */
+  .ph-book::before    { content: "📘"; font-size: 2rem; }
+  .ph-coin::before    { content: "🟡"; font-size: 2rem; }
+  .ph-vinyl::before   { content: "💿"; font-size: 2rem; }
+  .ph-camera::before  { content: "📷"; font-size: 2rem; }
+  .ph-frame::before   { content: "🖼️"; font-size: 2rem; }
+  .ph-ring::before    { content: "💍"; font-size: 2rem; }
+  .ph-file::before    { content: "📄"; font-size: 2rem; }
+  .ph-decor::before   { content: "🕰️"; font-size: 2rem; }
+  .ph-box::before     { content: "🗃️"; font-size: 2rem; }
+  
+  /* ================================
+     Botões e controles
+     ================================ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: var(--radius-1);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 160ms ease;
+    border: 1px solid transparent;
+  }
+  .btn-solid {
+    background: linear-gradient(180deg, var(--blue), #1b49d4);
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(43, 92, 255, 0.35);
+  }
+  .btn-solid:hover {
+    filter: brightness(1.05);
+  }
+  .btn-outline {
+    background: transparent;
+    border-color: var(--gold);
+    color: var(--gold-2);
+  }
+  .btn-outline:hover {
+    background: rgba(201, 162, 40, 0.12);
+  }
+  .btn-link {
+    padding: 0;
+    border: none;
+    color: var(--blue);
+    background: none;
+  }
+  .btn-link:hover {
+    text-decoration: underline;
+  }
+  .btn-icon {
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: var(--radius-1);
+  }
+  .btn-icon:hover {
+    border-color: var(--gold);
+  }
+  
+  /* ================================
+     Modal sem JS (checkbox hack)
+     ================================ */
+  .modal-toggle {
+    display: none;
+  }
+  .modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    place-items: center;
+    z-index: 200;
+  }
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+  }
+  .modal-content {
+    position: relative;
+    max-width: 720px;
+    width: calc(100% - 32px);
+    background: linear-gradient(180deg, var(--surface-2), var(--surface-3));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow-2);
+    overflow: hidden;
+  }
+  .modal-header,
+  .modal-footer {
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .modal-body {
+    padding: var(--space-3);
+  }
+  .details {
+    list-style: none;
+    margin: 0 0 var(--space-3) 0;
+    padding: 0;
+  }
+  .details li {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: var(--space-2);
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .details li:last-child {
+    border-bottom: none;
+  }
+  .note {
+    color: var(--text-dim);
+    border-left: 3px solid var(--gold);
+    padding-left: var(--space-2);
+  }
+  
+  /* Ativação do modal */
+  .modal-toggle:checked + label + .modal {
+    display: grid;
+  }
+  .modal-toggle:focus + label {
+    outline: none;
+    border-bottom: 2px solid var(--blue);
+  }
+  
+  /* ================================
+     Toolbar
+     ================================ */
+  .toolbar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-3);
+    align-items: center;
+    margin-top: var(--space-4);
+    padding: var(--space-3);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+  }
+  .sort select {
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-1);
+  }
+  .count {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dim);
+  }
+  .count-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--gold), var(--gold-2));
+    box-shadow: 0 0 0 3px rgba(201, 162, 40, 0.25);
+  }
+  
+  /* ================================
+     Sobre
+     ================================ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+  .about-card {
+    background: linear-gradient(180deg, var(--surface-2), var(--surface-3));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-1);
+  }
+  
+  /* ================================
+     Rodapé
+     ================================ */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: var(--space-4) 0;
+    background: linear-gradient(180deg, rgba(18,20,28,0.4), rgba(18,20,28,0.7));
+  }
+  .footer-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--text);
+  }
+  .footer-info {
+    color: var(--text-dim);
+  }
+  .footer-actions .btn {
+    margin-left: var(--space-2);
+  }
+  
+  /* ================================
+     Amostras de cor
+     ================================ */
+  .theme-preview {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    display: inline-flex;
+    gap: 6px;
+    opacity: 0.9;
+  }
+  .swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-1);
+  }
+  .swatch-black { background: var(--black); }
+  .swatch-gold  { background: var(--gold); }
+  .swatch-blue  { background: var(--blue); }
+  
+  /* ================================
+     Estados de foco e seleção
+     ================================ */
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--ring);
+    border-color: var(--blue);
+  }
+  ::selection {
+    background: rgba(43, 92, 255, 0.25);
+  }
+  
+  /* ================================
+     Responsividade
+     ================================ */
+  @media (max-width: 1024px) {
+    .hero-wrap {
+      grid-template-columns: 1fr;
+    }
+    .items .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-wrap {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+  @media (max-width: 640px) {
+    .header-wrap {
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+    .nav .nav-list {
+      justify-content: center;
+    }
+    .search {
+      grid-template-columns: 1fr;
+    }
+    .items .grid {
+      grid-template-columns: 1fr;
+    }
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    .stat-number {
+      font-size: 1.6rem;
+    }
+  }
+  
+  /* ================================
+     Microinterações e animações sutis
+     ================================ */
+  .card:hover {
+    transform: translateY(-2px);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+  }
+  .media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-1);
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(201,162,40,0.06), rgba(43,92,255,0.06));
+    opacity: 0;
+    transition: 200ms ease;
+  }
+  .card:hover .media::after {
+    opacity: 1;
+  }
+  .btn-solid:active {
+    transform: translateY(1px);
+  }
+  .modal-content {
+    animation: modalIn 220ms ease-out;
+  }
+  @keyframes modalIn {
+    from { transform: translateY(8px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* ================================
+     Utilidades
+     ================================ */
+  .sr-only {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0);
+    white-space: nowrap; border: 0;
+  }
+  
+  /* ================================
+     Auxiliar: categorias por cor (borda sutil)
+     ================================ */
+  .item.livros       { border-color: rgba(43,92,255,0.25); }
+  .item.moedas       { border-color: rgba(201,162,40,0.35); }
+  .item.vinis        { border-color: rgba(43,92,255,0.25); }
+  .item.eletronicos  { border-color: rgba(201,162,40,0.25); }
+  .item.arte         { border-color: rgba(201,162,40,0.35); }
+  .item.joias        { border-color: rgba(201,162,40,0.5); }
+  .item.documentos   { border-color: rgba(43,92,255,0.25); }
+  .item.decoracao    { border-color: rgba(201,162,40,0.25); }
+  .item.outros       { border-color: rgba(43,92,255,0.25); }
+  
+  /* Observação: filtros visuais ativos seriam controlados por JS.
+     Mantivemos todos exibidos por padrão para uso estático com HTML+CSS. */
+  

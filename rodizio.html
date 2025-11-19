@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rodízio - Pizzaria Suprema</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .rodizio-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fbe9e7;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .rodizio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #d84315;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #5d4037;
+      font-size: 0.95em;
+    }
+
+    .highlight {
+      background-color: #d84315;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Rodízio Sabor Supremo</h1></header>
+  <nav>
+    <a href="index.html">Login</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="montar.html">Monte Sua Pizza</a>
+    <a href="eventos.html">Eventos</a>
+  </nav>
+
+  <section class="rodizio-container">
+    <p>Nosso rodízio é uma celebração de sabores! Servido diariamente a partir das <strong>18h</strong>, você pode experimentar mais de <strong>30 variedades</strong> de pizzas salgadas e doces, com ingredientes frescos e combinações irresistíveis.</p>
+
+    <div class="rodizio-grid">
+      <div class="card">
+        <h3>🍕 Sabores Tradicionais</h3>
+        <p>Calabresa, Portuguesa, Frango com Catupiry, Quatro Queijos, Marguerita e muito mais.</p>
+      </div>
+      <div class="card">
+        <h3>🌱 Opções Vegetarianas</h3>
+        <p>Legumes grelhados, rúcula com tomate seco, brócolis com alho e pizzas sem lactose.</p>
+      </div>
+      <div class="card">
+        <h3>🍫 Pizzas Doces</h3>
+        <p>Chocolate com morango, banana com canela, Romeu e Julieta, brigadeiro crocante.</p>
+      </div>
+      <div class="card">
+        <h3>🕒 Horários</h3>
+        <p>Todos os dias das 18h às 23h. Aos sábados e domingos, também no almoço das 12h às 15h.</p>
+      </div>
+      <div class="card">
+        <h3>🥤 Bebidas Inclusas</h3>
+        <p>Refrigerantes, sucos naturais e água com gás à vontade durante o rodízio.</p>
+      </div>
+      <div class="card">
+        <h3>🎁 Promoções</h3>
+        <p>Grupos acima de 6 pessoas ganham sobremesa especial. Crianças até 6 anos não pagam.</p>
+      </div>
+    </div>
+
+    <div class="highlight">
+      Reserve sua mesa e venha viver a experiência Suprema!
+    </div>
+  </section>
+
+  <footer>&copy; 2025 Pizzaria Suprema</footer>
+</body>
+</html>

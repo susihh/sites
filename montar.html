@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monte Sua Pizza - Pizzaria Suprema</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .montar-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fbe9e7;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .ingredientes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Monte Sua Pizza</h1></header>
+  <nav>
+    <a href="index.html">Login</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="eventos.html">Eventos</a>
+    <a href="rodizio.html">Rodízio</a>
+  </nav>
+
+  <section class="montar-container">
+    <form>
+      <label for="massa">Tipo de massa:</label>
+      <select id="massa">
+        <option>Tradicional</option>
+        <option>Fina</option>
+        <option>Integral</option>
+        <option>Sem glúten</option>
+      </select>
+
+      <label for="molho">Molho:</label>
+      <select id="molho">
+        <option>Tomate</option>
+        <option>Branco</option>
+        <option>Pesto</option>
+      </select>
+
+      <label>Ingredientes:</label>
+      <div class="ingredientes-grid">
+        <label><input type="checkbox" /> Mussarela</label>
+        <label><input type="checkbox" /> Calabresa</label>
+        <label><input type="checkbox" /> Tomate</label>
+        <label><input type="checkbox" /> Manjericão</label>
+        <label><input type="checkbox" /> Bacon</label>
+        <label><input type="checkbox" /> Cebola</label>
+        <label><input type="checkbox" /> Champignon</label>
+        <label><input type="checkbox" /> Chocolate</label>
+      </div>
+
+      <button type="submit">Criar Pizza</button>
+    </form>
+  </section>
+
+  <footer>&copy; 2025 Pizzaria Suprema</footer>
+</body>
+</html>

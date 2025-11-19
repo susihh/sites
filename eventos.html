@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eventos - Pizzaria Suprema</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .eventos-container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: #fbe9e7;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .servico {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .servico:hover {
+      transform: translateY(-5px);
+    }
+
+    .servico h3 {
+      color: #d84315;
+      margin-bottom: 10px;
+    }
+
+    .servico p {
+      color: #5d4037;
+      font-size: 0.95em;
+    }
+
+    .cta {
+      margin-top: 40px;
+      background-color: #d84315;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .cta a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Locação para Eventos</h1></header>
+  <nav>
+    <a href="index.html">Login</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="montar.html">Monte Sua Pizza</a>
+    <a href="rodizio.html">Rodízio</a>
+  </nav>
+
+  <section class="eventos-container">
+    <p>Transforme sua comemoração em uma experiência inesquecível! A Pizzaria Suprema oferece um ambiente acolhedor, moderno e totalmente preparado para receber eventos de todos os tipos:</p>
+
+    <ul>
+      <li>🎂 Festas de aniversário</li>
+      <li>💼 Eventos corporativos</li>
+      <li>💍 Jantares de casamento</li>
+      <li>🎉 Confraternizações e encontros familiares</li>
+    </ul>
+
+    <div class="servicos-grid">
+      <div class="servico">
+        <h3>🍽️ Buffet Personalizado</h3>
+        <p>Monte seu cardápio com pizzas salgadas, doces, entradas e bebidas à vontade.</p>
+      </div>
+      <div class="servico">
+        <h3>🎶 Música Ambiente</h3>
+        <p>Escolha entre playlists temáticas ou traga sua própria trilha sonora.</p>
+      </div>
+      <div class="servico">
+        <h3>🎈 Decoração Temática</h3>
+        <p>Decoração personalizada para aniversários, casamentos e eventos empresariais.</p>
+      </div>
+      <div class="servico">
+        <h3>🧑‍🍳 Equipe Dedicada</h3>
+        <p>Garçons, pizzaiolos e coordenadores para garantir que tudo saia perfeito.</p>
+      </div>
+      <div class="servico">
+        <h3>📸 Espaço Instagramável</h3>
+        <p>Cenários decorativos para fotos incríveis com seus convidados.</p>
+      </div>
+      <div class="servico">
+        <h3>🕒 Horários Flexíveis</h3>
+        <p>Eventos diurnos e noturnos, com pacotes de 2h, 4h ou noite completa.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      Solicite um orçamento personalizado pelo WhatsApp ou <a href="#">clique aqui para reservar</a> seu evento!
+    </div>
+  </section>
+
+  <footer>&copy; 2025 Pizzaria Suprema</footer>
+</body>
+</html>
